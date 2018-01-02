@@ -1,0 +1,19 @@
+port + 1
+make sure to add polls/ in url addresss
+chammasalome@gmail.com
+guerl8
+username left blank for vagrant
+Run python3 ./manage.py runserver 0.0.0.0:8000
+And got to 0.0.0.0:8001
+
+http://0.0.0.0:8001/polls/
+http://0.0.0.0:8001/admin/
+
+Notes
+A URLconf maps URL patterns to views.
+ROOT_URLCONF = 'mysite.urls' in settings indicate which file is the URLconf
+t finds the variable named urlpatterns and traverses the patterns in order. 
+Each view is responsible for doing one of two things: returning an HttpResponse object containing the content for the requested page, or raising an exception such as Http404.
+ 'APP_DIRS': True, Look for plate directory in each installed apps
+
+stopped at: A SHORTCUT RENDER tuto 3

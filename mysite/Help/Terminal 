@@ -1,0 +1,710 @@
+Last login: Sun Dec 17 00:53:03 on console
+You have mail.
+Salomes-MacBook-Air:~ Salome$ cd vagrant
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+VM must be running to open SSH connection. Run `vagrant up`
+to start the virtual machine.
+Salomes-MacBook-Air:vagrant Salome$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 5000 (guest) => 5000 (host) (adapter 1)
+    default: 5001 (guest) => 5001 (host) (adapter 1)
+    default: 8888 (guest) => 8888 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/Salome/vagrant
+    default: /home/vagrant/src => /Users/Salome/src
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Sun Dec 17 08:44:25 2017 from 10.0.2.2
+vagrant@vagrant:~$  cd ..
+vagrant@vagrant:home$  cd src
+-bash: cd: src: No such file or directory
+vagrant@vagrant:home$  ls
+vagrant
+vagrant@vagrant:home$  cd ..
+vagrant@vagrant:/$  cd src
+-bash: cd: src: No such file or directory
+vagrant@vagrant:/$  ls
+bin   etc         lib         media  proc  sbin  tmp      var
+boot  home        lib64       mnt    root  srv   usr      vmlinuz
+dev   initrd.img  lost+found  opt    run   sys   vagrant
+vagrant@vagrant:/$  cd vagrant
+vagrant@vagrant:vagrant$  ls
+hb-linux-setup.sh  hb-vagrant-setup.sh  vagrant_1.8.5.dmg  Vagrantfile
+vagrant@vagrant:vagrant$  cd ..
+vagrant@vagrant:/$  cd ..
+vagrant@vagrant:/$  ls
+bin   etc         lib         media  proc  sbin  tmp      var
+boot  home        lib64       mnt    root  srv   usr      vmlinuz
+dev   initrd.img  lost+found  opt    run   sys   vagrant
+vagrant@vagrant:/$  cd vagrant
+vagrant@vagrant:vagrant$  ls
+hb-linux-setup.sh  hb-vagrant-setup.sh  vagrant_1.8.5.dmg  Vagrantfile
+vagrant@vagrant:vagrant$  ^C
+vagrant@vagrant:vagrant$  logout
+Connection to 127.0.0.1 closed.
+Salomes-MacBook-Air:vagrant Salome$ ls
+Vagrantfile		hb-vagrant-setup.sh
+hb-linux-setup.sh	vagrant_1.8.5.dmg
+Salomes-MacBook-Air:vagrant Salome$ cd ..
+Salomes-MacBook-Air:~ Salome$ ls
+Applications	Downloads	Lytmus		Pictures	src
+Desktop		GGB.jpg		Movies		Public		test
+Documents	Library		Music		VirtualBox VMs	vagrant
+Salomes-MacBook-Air:~ Salome$ cd ..
+Salomes-MacBook-Air:Users Salome$ ls
+Guest	Salome	Shared
+Salomes-MacBook-Air:Users Salome$ cd Salome
+Salomes-MacBook-Air:~ Salome$ ls
+Applications	Downloads	Lytmus		Pictures	src
+Desktop		GGB.jpg		Movies		Public		test
+Documents	Library		Music		VirtualBox VMs	vagrant
+Salomes-MacBook-Air:~ Salome$ cd src
+Salomes-MacBook-Air:src Salome$ ls
+django-docu-project		javascriptnextcohort
+dropbox				mycuteproject
+electron-quick-start		opower
+electron-samples		pbtodoplane
+env				pinterest_sec_challenge_march17
+etc				problems
+frontend-nanodegree-resume	project
+gtfo				test2
+hackbright-curric		test_requests.py
+hb_ctc_hr_challenges		trash
+interview			tutorial
+javascript
+Salomes-MacBook-Air:src Salome$ cd ..
+Salomes-MacBook-Air:~ Salome$ ls
+Applications	Downloads	Lytmus		Pictures	src
+Desktop		GGB.jpg		Movies		Public		test
+Documents	Library		Music		VirtualBox VMs	vagrant
+Salomes-MacBook-Air:~ Salome$ cd vagrant/
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Sun Dec 17 17:38:37 2017 from 10.0.2.2
+vagrant@vagrant:~$  ls
+bla  src
+vagrant@vagrant:~$  c dsrc
+c: command not found
+vagrant@vagrant:~$  cd src
+vagrant@vagrant:src$  ls
+django-docu-project         javascriptnextcohort
+dropbox                     mycuteproject
+electron-quick-start        opower
+electron-samples            pbtodoplane
+env                         pinterest_sec_challenge_march17
+etc                         problems
+frontend-nanodegree-resume  project
+gtfo                        test2
+hackbright-curric           test_requests.py
+hb_ctc_hr_challenges        trash
+interview                   tutorial
+javascript
+vagrant@vagrant:src$  cd project
+vagrant@vagrant:project$  ls
+configuration.py   helper.pyc         node_modules  requirements.txt  tests.py
+configuration.pyc  htmlcov            package.json  secrets.sh
+env                install-ubuntu.sh  Procfile      server.py
+Guide setup        model.py           q             static
+helper.py          model.pyc          README.md     templates
+vagrant@vagrant:project$  source env/bin/activate
+(env) vagrant@vagrant:project$  python server.py
+Traceback (most recent call last):
+  File "server.py", line 34, in <module>
+    app.config.from_object('configuration')
+  File "/home/vagrant/src/project/env/local/lib/python2.7/site-packages/flask/config.py", line 163, in from_object
+    obj = import_string(obj)
+  File "/home/vagrant/src/project/env/local/lib/python2.7/site-packages/werkzeug/utils.py", line 418, in import_string
+    __import__(import_name)
+  File "/home/vagrant/src/project/configuration.py", line 35, in <module>
+    YELP_ACCESS_TOKEN = r.json()['access_token']
+KeyError: 'access_token'
+(env) vagrant@vagrant:project$  source secrets.sh
+(env) vagrant@vagrant:project$  python server.py
+/home/vagrant/src/project/env/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+/home/vagrant/src/project/env/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+ * Debugger is active!
+ * Debugger pin code: 238-341-604
+10.0.2.2 - - [17/Dec/2017 17:42:41] "GET / HTTP/1.1" 200 -
+10.0.2.2 - - [17/Dec/2017 17:42:41] "GET /static/css/styles_sheet.css HTTP/1.1" 200 -
+10.0.2.2 - - [17/Dec/2017 17:42:41] "GET /robots.txt HTTP/1.1" 404 -
+10.0.2.2 - - [17/Dec/2017 17:42:42] "GET /static/css/img5b6.jpeg HTTP/1.1" 200 -
+10.0.2.2 - - [17/Dec/2017 17:42:43] "GET /favicon.ico HTTP/1.1" 404 -
+^C(env) vagrant@vagrant:project$  cd ..
+(env) vagrant@vagrant:src$  ls
+django-docu-project         javascriptnextcohort
+dropbox                     mycuteproject
+electron-quick-start        opower
+electron-samples            pbtodoplane
+env                         pinterest_sec_challenge_march17
+etc                         problems
+frontend-nanodegree-resume  project
+gtfo                        test2
+hackbright-curric           test_requests.py
+hb_ctc_hr_challenges        trash
+interview                   tutorial
+javascript
+(env) vagrant@vagrant:src$  cd django-docu-project/
+(env) vagrant@vagrant:django-docu-project$  deactivate
+vagrant@vagrant:django-docu-project$  source env/bin/activate
+(env) vagrant@vagrant:django-docu-project$  ls
+env  mysite  Vagrantfile
+(env) vagrant@vagrant:django-docu-project$  vagrant reload
+The program 'vagrant' is currently not installed. You can install it by typing:
+sudo apt install vagrant
+(env) vagrant@vagrant:django-docu-project$  cd mysite
+(env) vagrant@vagrant:mysite$  ls     
+db.sqlite3  manage.py  mysite  polls
+(env) vagrant@vagrant:mysite$  ./manage.py runserver
+  File "./manage.py", line 14
+    ) from exc
+         ^
+SyntaxError: invalid syntax
+(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 17, 2017 - 17:45:43
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(env) vagrant@vagrant:mysite$  logout
+Connection to 127.0.0.1 closed.
+Salomes-MacBook-Air:vagrant Salome$ ls
+Vagrantfile		hb-vagrant-setup.sh
+hb-linux-setup.sh	vagrant_1.8.5.dmg
+Salomes-MacBook-Air:vagrant Salome$ vagrant reload
+==> default: Attempting graceful shutdown of VM...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 5000 (guest) => 5000 (host) (adapter 1)
+    default: 5001 (guest) => 5001 (host) (adapter 1)
+    default: 8888 (guest) => 8888 (host) (adapter 1)
+    default: 8000 (guest) => 8001 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/Salome/vagrant
+    default: /home/vagrant/src => /Users/Salome/src
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Sun Dec 17 17:40:54 2017 from 10.0.2.2
+vagrant@vagrant:~$  cd src
+vagrant@vagrant:src$  ls
+django-docu-project         javascriptnextcohort
+dropbox                     mycuteproject
+electron-quick-start        opower
+electron-samples            pbtodoplane
+env                         pinterest_sec_challenge_march17
+etc                         problems
+frontend-nanodegree-resume  project
+gtfo                        test2
+hackbright-curric           test_requests.py
+hb_ctc_hr_challenges        trash
+interview                   tutorial
+javascript
+vagrant@vagrant:src$  cd django-docu-project/
+vagrant@vagrant:django-docu-project$  ls
+env  mysite
+vagrant@vagrant:django-docu-project$  cd mysite/
+vagrant@vagrant:mysite$  source env/bin/activate
+-bash: env/bin/activate: No such file or directory
+vagrant@vagrant:mysite$  cd ..
+vagrant@vagrant:django-docu-project$  source env/bin/activate
+(env) vagrant@vagrant:django-docu-project$  cd mysite/
+(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 17, 2017 - 17:52:16
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+Not Found: /robots.txt
+[17/Dec/2017 17:52:24] "GET /robots.txt HTTP/1.1" 404 2075
+[17/Dec/2017 17:52:24] "GET / HTTP/1.1" 404 2027
+Not Found: /favicon.ico
+[17/Dec/2017 17:52:24] "GET /favicon.ico HTTP/1.1" 404 2078
+[17/Dec/2017 17:53:04] "GET /polls/ HTTP/1.1" 200 40
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[17/Dec/2017 17:55:15] "GET /polls HTTP/1.1" 400 59839
+[17/Dec/2017 17:55:15] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[17/Dec/2017 17:55:15] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[17/Dec/2017 17:55:15] "GET /favicon.ico HTTP/1.1" 400 59865
+[17/Dec/2017 17:55:35] "GET /polls/ HTTP/1.1" 200 40
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:03:56] "GET / HTTP/1.1" 400 59784
+[18/Dec/2017 05:03:56] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:03:56] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:03:58] "GET /favicon.ico HTTP/1.1" 400 59860
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:04:20] "GET / HTTP/1.1" 400 59919
+[18/Dec/2017 05:04:20] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:04:20] "GET /robots.txt HTTP/1.1" 400 59673
+Invalid HTTP_HOST header: '0.0.0.0:8001'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[18/Dec/2017 05:04:21] "GET /favicon.ico HTTP/1.1" 400 59860
+^C(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 18, 2017 - 05:05:07
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+[18/Dec/2017 05:05:13] "GET / HTTP/1.1" 404 2025
+Not Found: /robots.txt
+[18/Dec/2017 05:05:13] "GET /robots.txt HTTP/1.1" 404 2073
+Not Found: /favicon.ico
+[18/Dec/2017 05:05:15] "GET /favicon.ico HTTP/1.1" 404 2076
+[18/Dec/2017 05:05:21] "GET /polls HTTP/1.1" 301 0
+[18/Dec/2017 05:05:21] "GET /polls/ HTTP/1.1" 200 40
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 18, 2017 - 05:11:20
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[18/Dec/2017 05:11:24] "GET /polls/ HTTP/1.1" 200 49
+^C(env) vagrant@vagrant:mysite$  python manage.py migrate
+  File "manage.py", line 14
+    ) from exc
+         ^
+SyntaxError: invalid syntax
+(env) vagrant@vagrant:mysite$  python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying sessions.0001_initial... OK
+(env) vagrant@vagrant:mysite$  psql mysite
+psql: FATAL:  database "mysite" does not exist
+(env) vagrant@vagrant:mysite$  psql
+psql (9.5.4)
+Type "help" for help.
+
+vagrant=# SHOW TABLES;
+ERROR:  unrecognized configuration parameter "tables"
+vagrant=# ^C
+vagrant=# \q
+(env) vagrant@vagrant:mysite$  mysql mysite
+The program 'mysql' can be found in the following packages:
+ * mysql-client-core-5.7
+ * mariadb-client-core-10.0
+Try: sudo apt install <selected package>
+(env) vagrant@vagrant:mysite$  mysql
+The program 'mysql' can be found in the following packages:
+ * mysql-client-core-5.7
+ * mariadb-client-core-10.0
+Try: sudo apt install <selected package>
+(env) vagrant@vagrant:mysite$  mysql
+The program 'mysql' can be found in the following packages:
+ * mysql-client-core-5.7
+ * mariadb-client-core-10.0
+Try: sudo apt install <selected package>
+(env) vagrant@vagrant:mysite$  python manage.py makemigrations polls
+  File "manage.py", line 14
+    ) from exc
+         ^
+SyntaxError: invalid syntax
+(env) vagrant@vagrant:mysite$  python3 manage.py makemigrations polls
+Traceback (most recent call last):
+  File "manage.py", line 15, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/management/__init__.py", line 371, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python3.5/dist-packages/django/core/management/__init__.py", line 317, in execute
+    settings.INSTALLED_APPS
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 56, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.5/dist-packages/django/conf/__init__.py", line 136, in __init__
+    raise ValueError("Incorrect timezone setting: %s" % self.TIME_ZONE)
+ValueError: Incorrect timezone setting: PST
+(env) vagrant@vagrant:mysite$  python3 manage.py makemigrations polls
+Migrations for 'polls':
+  polls/migrations/0001_initial.py
+    - Create model Choice
+    - Create model Question
+    - Add field question to choice
+(env) vagrant@vagrant:mysite$  python manage.py sqlmigrate polls 0001
+  File "manage.py", line 14
+    ) from exc
+         ^
+SyntaxError: invalid syntax
+(env) vagrant@vagrant:mysite$  python3 manage.py sqlmigrate polls 0001
+BEGIN;
+--
+-- Create model Choice
+--
+CREATE TABLE "polls_choice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "choice_text" varchar(200) NOT NULL, "votes" integer NOT NULL);
+--
+-- Create model Question
+--
+CREATE TABLE "polls_question" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "question_text" varchar(200) NOT NULL, "pub_date" datetime NOT NULL);
+--
+-- Add field question to choice
+--
+ALTER TABLE "polls_choice" RENAME TO "polls_choice__old";
+CREATE TABLE "polls_choice" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "choice_text" varchar(200) NOT NULL, "votes" integer NOT NULL, "question_id" integer NOT NULL REFERENCES "polls_question" ("id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "polls_choice" ("choice_text", "id", "votes", "question_id") SELECT "choice_text", "id", "votes", NULL FROM "polls_choice__old";
+DROP TABLE "polls_choice__old";
+CREATE INDEX "polls_choice_question_id_c5b4b260" ON "polls_choice" ("question_id");
+COMMIT;
+(env) vagrant@vagrant:mysite$  python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying polls.0001_initial... OK
+(env) vagrant@vagrant:mysite$  python3 manage.py shell
+Python 3.5.2 (default, Nov 23 2017, 16:37:01) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from polls.models import Question, Choice
+>>> Question.objects.all()
+<QuerySet []>
+>>> q = Question(question_text="What's up", pub_date=timezone.now())
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'timezone' is not defined
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's up", pub_date=timezone.now())
+>>> q
+<Question: Question object (None)>
+>>> print(q)
+Question object (None)
+>>> q.pub_date
+datetime.datetime(2017, 12, 18, 5, 34, 50, 24962, tzinfo=<UTC>)
+>>> q.save()
+>>> q.id
+1
+>>> 
+KeyboardInterrupt
+>>> 
+(env) vagrant@vagrant:mysite$  python3 manage.py shell
+Python 3.5.2 (default, Nov 23 2017, 16:37:01) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>  from polls.models import Question, Choice
+  File "<console>", line 1
+    from polls.models import Question, Choice
+    ^
+IndentationError: unexpected indent
+>>> from polls.models import Question, Choice
+>>> Question.objects.all()
+<QuerySet [<Question: Here is my questionWhat's up>]>
+>>> Question.objects.filter(id=1)
+<QuerySet [<Question: Here is my questionWhat's up>]>
+>>> Question.objects.filter(question_text__startswith='Wh')
+<QuerySet [<Question: Here is my questionWhat's up>]>
+>>> Question.objects.filter(question_pub__year=current_year)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'current_year' is not defined
+>>> q.was_published_recently()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'q' is not defined
+>>> Question.objects.filter(question_text__startswith='Wh')
+<QuerySet [<Question: Here is my questionWhat's up>]>
+>>> qs = Question.objects.filter(question_text__startswith='Wh')
+>>> q = qs[0]
+>>> q.was_published_recently()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/home/vagrant/src/django-docu-project/mysite/polls/models.py", line 13, in was_published_recently
+    return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+NameError: name 'timezone' is not defined
+>>>  q.choice_set.create(choice_text='Not much', votes=0)
+  File "<console>", line 1
+    q.choice_set.create(choice_text='Not much', votes=0)
+    ^
+IndentationError: unexpected indent
+>>> q.choice_set.create(choice_text='Not much', votes=0)
+<Choice: Not much>
+>>> q.choice_set.create(choice_text='Yes', votes=0)
+<Choice: Yes>
+>>> q.choice_set.create(choice_text='Youhou', votes=0)
+<Choice: Youhou>
+>>> c = q.choice_set.create(choice_text='Youhou', votes=0)
+>>> c.question
+<Question: Here is my questionWhat's up>
+>>> q.choice_set.all()
+<QuerySet [<Choice: Not much>, <Choice: Yes>, <Choice: Youhou>, <Choice: Youhou>]>
+>>> q.choice_set.count()
+4
+>>> c.delete()
+(1, {'polls.Choice': 1})
+>>> python manage.py createsuperuser
+  File "<console>", line 1
+    python manage.py createsuperuser
+                ^
+SyntaxError: invalid syntax
+>>> python3 manage.py createsuperuser
+  File "<console>", line 1
+    python3 manage.py createsuperuser
+                 ^
+SyntaxError: invalid syntax
+>>> python3 manage.py createsuperuser
+KeyboardInterrupt
+>>> 
+(env) vagrant@vagrant:mysite$  python3 manage.py createsuperuser
+Username (leave blank to use 'vagrant'):       
+Email address: chammasalome@gmail.com
+Password: 
+Password (again): 
+Superuser created successfully.
+(env) vagrant@vagrant:mysite$  python3 manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 17, 2017 - 21:51:00
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 17, 2017 - 21:52:44
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[17/Dec/2017 21:52:56] "GET /admin HTTP/1.1" 301 0
+[17/Dec/2017 21:52:56] "GET /admin/ HTTP/1.1" 302 0
+[17/Dec/2017 21:52:56] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1860
+[17/Dec/2017 21:52:56] "GET /static/admin/css/base.css HTTP/1.1" 200 16106
+[17/Dec/2017 21:52:56] "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[17/Dec/2017 21:52:56] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17894
+[17/Dec/2017 21:52:57] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[17/Dec/2017 21:52:58] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[17/Dec/2017 21:52:58] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[17/Dec/2017 21:53:30] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1860
+[17/Dec/2017 21:54:01] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[17/Dec/2017 21:54:01] "GET /admin/ HTTP/1.1" 200 2991
+[17/Dec/2017 21:54:01] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[17/Dec/2017 21:54:02] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[17/Dec/2017 21:54:02] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[17/Dec/2017 21:54:02] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 17, 2017 - 21:55:34
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[17/Dec/2017 21:55:46] "GET /admin/ HTTP/1.1" 200 3636
+[17/Dec/2017 21:55:50] "GET /admin/polls/ HTTP/1.1" 200 2421
+[17/Dec/2017 21:55:53] "GET /admin/polls/question/ HTTP/1.1" 200 4424
+[17/Dec/2017 21:55:53] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[17/Dec/2017 21:55:53] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[17/Dec/2017 21:55:53] "GET /static/admin/js/core.js HTTP/1.1" 200 7134
+[17/Dec/2017 21:55:53] "GET /static/admin/js/actions.js HTTP/1.1" 200 6502
+[17/Dec/2017 21:55:53] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6897
+[17/Dec/2017 21:55:53] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[17/Dec/2017 21:55:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[17/Dec/2017 21:55:53] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[17/Dec/2017 21:55:53] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8729
+[17/Dec/2017 21:55:53] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[17/Dec/2017 21:55:53] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[17/Dec/2017 21:56:29] "GET /admin/polls/question/1/change/ HTTP/1.1" 200 5202
+[17/Dec/2017 21:56:29] "GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+[17/Dec/2017 21:56:29] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20283
+[17/Dec/2017 21:56:29] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[17/Dec/2017 21:56:29] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[17/Dec/2017 21:56:29] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7777
+[17/Dec/2017 21:56:29] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[17/Dec/2017 21:56:30] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[17/Dec/2017 21:56:30] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[17/Dec/2017 21:56:30] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[17/Dec/2017 21:57:25] "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+[17/Dec/2017 21:57:30] "POST /admin/polls/question/1/change/ HTTP/1.1" 302 0
+[17/Dec/2017 21:57:30] "GET /admin/polls/question/ HTTP/1.1" 200 4635
+[17/Dec/2017 21:57:30] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[17/Dec/2017 21:57:31] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[17/Dec/2017 21:57:35] "GET /admin/polls/question/1/change/ HTTP/1.1" 200 5202
+[17/Dec/2017 21:57:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3185
+[17/Dec/2017 21:57:38] "GET /admin/polls/question/1/history/ HTTP/1.1" 200 2371
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+Salomes-MacBook-Air:vagrant Salome$ 
+  [Restored Jan 1, 2018, 10:27:12 AM]
+Last login: Mon Jan  1 10:26:53 on console
+You have mail.
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+VM must be running to open SSH connection. Run `vagrant up`
+to start the virtual machine.
+Salomes-MacBook-Air:vagrant Salome$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Resuming suspended VM...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+Salomes-MacBook-Air:vagrant Salome$ vagrant ssh
+Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Sun Dec 17 17:51:26 2017 from 10.0.2.2
+vagrant@vagrant:~$  ls
+bla  src
+vagrant@vagrant:~$  cd src
+vagrant@vagrant:src$  cd django-docu-project/
+vagrant@vagrant:django-docu-project$  python3 ./manage.py runserver
+python3: can't open file './manage.py': [Errno 2] No such file or directory
+vagrant@vagrant:django-docu-project$  ls
+env  mysite
+vagrant@vagrant:django-docu-project$  source env/bin/activate
+(env) vagrant@vagrant:django-docu-project$  python3 ./manage.py runserver
+python3: can't open file './manage.py': [Errno 2] No such file or directory
+(env) vagrant@vagrant:django-docu-project$  cd mysite
+(env) vagrant@vagrant:mysite$  ls
+db.sqlite3  manage.py  mysite  polls
+(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 01, 2018 - 22:25:59
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(env) vagrant@vagrant:mysite$  ls       
+db.sqlite3  manage.py  mysite  polls
+(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 8008
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 01, 2018 - 22:26:41
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8008/
+Quit the server with CONTROL-C.
+^C(env) vagrant@vagrant:mysite$  ls
+db.sqlite3  helper.txt  manage.py  mysite  polls
+(env) vagrant@vagrant:mysite$  cd polls
+(env) vagrant@vagrant:polls$  python3 ./manage.py runserver 8001
+python3: can't open file './manage.py': [Errno 2] No such file or directory
+(env) vagrant@vagrant:polls$  cd ..
+(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 8001
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 01, 2018 - 22:28:23
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8001/
+Quit the server with CONTROL-C.
+^C(env) vagrant@vagrant:mysite$  python3 ./manage.py runserver 0.0.0.0:8000
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 01, 2018 - 22:31:10
+Django version 2.0, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:31:13] "GET /admin/ HTTP/1.1" 400 60089
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:31:14] "GET /favicon.ico HTTP/1.1" 400 59972
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:31:57] "GET /polls/ HTTP/1.1" 400 59954
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:31:58] "GET /favicon.ico HTTP/1.1" 400 59972
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:32:17] "GET /polls HTTP/1.1" 400 59943
+Invalid HTTP_HOST header: '127.0.0.1:8001'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+[01/Jan/2018 22:32:18] "GET /favicon.ico HTTP/1.1" 400 59971
+[01/Jan/2018 22:32:29] "GET /polls HTTP/1.1" 301 0
+[01/Jan/2018 22:32:29] "GET /polls/ HTTP/1.1" 200 49
+Not Found: /favicon.ico
+[01/Jan/2018 22:32:30] "GET /favicon.ico HTTP/1.1" 404 2076
+
